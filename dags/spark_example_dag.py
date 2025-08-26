@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.providers.standard.operators.python import PythonOperator
 from datetime import datetime, timedelta
-from spark_jobs import spark_task
+
 # import sys
 # import os
 
@@ -25,7 +25,7 @@ with DAG(
     description='Run a Pyspark job from Airflow',
     start_date=datetime(2025, 8, 1),
     catchup=False
-) as dag:
+        ) as dag:
     PythonOperator(
         task_id='run_spark',
         python_callable=run_spark_callable
