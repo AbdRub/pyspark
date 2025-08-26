@@ -1,9 +1,8 @@
 from airflow import DAG
 from datetime import datetime, timedelta
 from airflow.providers.standard.operators.python import PythonOperator
-
-def print_hello_world():
-    print("hello_world")
+from spark_jobs import spark_task
+from tasks import run_first_task, run_second_task, run_third_task
 
 default_args = {
     'owner': 'Abdul Rub',
@@ -24,6 +23,18 @@ with DAG(
         ) as dag:
 
     task1 = PythonOperator(
-        task_id='printworld',
-        python_callable=print_hello_world
+        task_id='run_first_task',
+        python_callable=run_first_task
     )
+
+    task2 = PythonOperator(
+        task_id='run_second_task',
+        python_callable=run_second_task
+    )
+
+    task3 = PythonOperator(
+        task_id='run_third_task',
+        python_callable=run_third_task
+    )
+
+    task1 >> task2 >> task3

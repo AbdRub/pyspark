@@ -3,3 +3,5 @@ BigMartSales.csv/
 config/
 .ipynb_checkpoints/
 dags/__pycache__/dummy_dag.cpython-312.pyc
+__pycache__/
+*.pyc
