@@ -3,5 +3,9 @@ BigMartSales.csv/
 config/
 .ipynb_checkpoints/
 dags/__pycache__/dummy_dag.cpython-312.pyc
-__pycache__/
+dags/__pycache__/
+spark_jobs/__pycache__/spark_job.cpython-312.pyc/
+spark_jobs/__pycache__/
+dags/__pycache__/tasks.cpython-312.pyc/
 *.pyc
+venv/
