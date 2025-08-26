@@ -7,5 +7,5 @@ dags/__pycache__/
 spark_jobs/__pycache__/spark_job.cpython-312.pyc/
 spark_jobs/__pycache__/
 dags/__pycache__/tasks.cpython-312.pyc/
-*.pyc
+*.pyc/
 venv/
