@@ -1,13 +1,12 @@
 from airflow import DAG
 from datetime import datetime, timedelta
 from airflow.providers.standard.operators.python import PythonOperator
-from spark_jobs import spark_task
 from tasks import run_first_task, run_second_task, run_third_task
 
 default_args = {
     'owner': 'Abdul Rub',
     'depends_on_past': False,
-    'start_date': datetime(2025, 8, 26, 7),
+    'start_date': datetime(2025, 8, 26),
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
 }
@@ -18,7 +17,7 @@ with DAG(
             description='A dummy DAG for demonstration purposes',
             schedule='@daily',
             catchup=False,
-            start_date=datetime(2025, 8, 26, 7)
+            start_date=datetime(2025, 8, 26)
 
         ) as dag:
 
