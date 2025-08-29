@@ -4,17 +4,16 @@ from datetime import datetime, timedelta
 default_args = {
     'owner': 'Abdul Rub',
     'retries': 3,
-    'retry_delay': timedelta(minutes=5),
-    'start_date': datetime(2025, 8, 27),
-    'schedule_interval': '@daily',
-    'depends_on_past': False
-}
+    'retry_delay': timedelta(minutes=5)
+    }
 
 @dag(dag_id='taskflow_api_dag',
      default_args=default_args,
-     catchup=False,
      description='A dummy DAG for demonstration purposes',
-     start_date=datetime(2025, 8, 27))
+     start_date=datetime(2025, 8, 25),
+     schedule='@daily',
+     catchup=True
+     )
 
 def taskflow_api_dag():
     
