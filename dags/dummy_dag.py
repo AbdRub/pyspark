@@ -15,7 +15,7 @@ with DAG(
             dag_id='dummy_dag',
             default_args=default_args,
             description='A dummy DAG for demonstration purposes',
-            schedule='@daily',
+            schedule='@once',
             catchup=False,
             start_date=datetime(2025, 8, 26)
 

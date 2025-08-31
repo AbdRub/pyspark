@@ -21,7 +21,7 @@ default_args = {
 
 with DAG(
     dag_id='pyspark_airflow_dag',
-    schedule='@daily',
+    schedule='@once',
     default_args=default_args,
     description='Run a Pyspark job from Airflow',
     start_date=datetime(2025, 8, 1),

@@ -17,5 +17,3 @@ def run_third_task(ti):
     value = ti.xcom_pull(task_ids="run_second_task", key="xcom_from_second_task")
     print(f"Third task pulled: {value}")
     return f"third task ran, got {value}"
-
-from airflow import DAG, task
