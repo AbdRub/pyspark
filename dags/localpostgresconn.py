@@ -13,7 +13,7 @@ default_args = {
 
 @dag(dag_id='postgres_conn_dag',
      default_args=default_args,
-     start_date=datetime(2025, 1, 1),
+     start_date=datetime(2025, 8, 31),
      description='PostgreSQL connection demonstration with optimized error handling',
      schedule=None,
      catchup=False,
